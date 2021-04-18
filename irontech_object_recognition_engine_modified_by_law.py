@@ -220,8 +220,8 @@ def detect_img(image_url):
 
 
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
 """# Load object recognition engine
 SSD mobilenet
