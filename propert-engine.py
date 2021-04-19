@@ -173,11 +173,13 @@ def run_detector(detector, path):
 
   threshold = 0.2
   all_objs = []
-  # print(result["detection_class_entities"])
+  
+  print("\nObjects detected: ")
   for cls, score in zip(result["detection_class_entities"], result["detection_scores"]):
     if score > threshold:
       all_objs.append(cls)
   print(all_objs)
+
   if b'Stairs' in all_objs:
     print("Stairs \n"
            + "1. Ads / business notices near staircase.\n"
@@ -186,7 +188,7 @@ def run_detector(detector, path):
            + "4. Is my staircase safe for fire escape?.\n")
     c = input("Please input your choice:")
     assert int(c) in [1, 2, 3, 4], "Wrong input"
-    print(reg_stairs[int(c)-1])
+    print('-----------------------\n' + reg_stairs[int(c)-1])
   
   if b'Window' in all_objs:
     print("Windows \n"
@@ -199,15 +201,15 @@ def run_detector(detector, path):
       flag = input("Is the window within a flat?  0: No  1: Yes.\n")
       assert int(flag) in [0, 1], "Wrong input"
       if int(flag) == 0:
-        print('The Building Manager has the power / duty to replace any glass in any windows or doors of the common parts of the said buildlng that may be broken.')
+        print('-----------------------\n' + 'The Building Manager has the power / duty to replace any glass in any windows or doors of the common parts of the said buildlng that may be broken.')
       else:
-        print('The expenses for keeping the interior of any Unit and all the fittings, fixtrues, wiring, plumbing and other services therein (other than main services serving the said buildiug as a whole) and all the windows and doors thereof, in good and tenantable repair and condition shall be borne directly by the owner thereof.')
+        print('-----------------------\n' + 'The expenses for keeping the interior of any Unit and all the fittings, fixtrues, wiring, plumbing and other services therein (other than main services serving the said buildiug as a whole) and all the windows and doors thereof, in good and tenantable repair and condition shall be borne directly by the owner thereof.')
     elif int(c) == 2:
-      print('No conditioning or other units may be installed through the windows of the Units except with the written permission of the Managers and subject to such conditions including, without limitation, the taking of measures to avoid condensation dripping onto the premises below, the Managers may require.')
+      print('-----------------------\n' + 'No conditioning or other units may be installed through the windows of the Units except with the written permission of the Managers and subject to such conditions including, without limitation, the taking of measures to avoid condensation dripping onto the premises below, the Managers may require.')
     else:
-      print('Lighting and ventilation of rooms used or intended to be used for habitation or as an office or kitchen:(1) Every room used for habitation or for the purposes of an office or as a kitchen shall be provided with natural lighting and ventilation.')
+      print('-----------------------\n' + 'Lighting and ventilation of rooms used or intended to be used for habitation or as an office or kitchen:(1) Every room used for habitation or for the purposes of an office or as a kitchen shall be provided with natural lighting and ventilation.')
   if b'Dog' in all_objs or b'Cat' in all_objs:
-    print("Nuisances which may be dealt with summarily (d) any animal or bird kept in such a place, or in such a manner, as to be a nuisance or injurious or dangerous to health; (1)The following matters shall, subject as hereinafter provided, be nuisances which may be dealt with summarily under section 127—\n\n"
+    print('-----------------------\n' + "Nuisances which may be dealt with summarily (d) any animal or bird kept in such a place, or in such a manner, as to be a nuisance or injurious or dangerous to health; (1)The following matters shall, subject as hereinafter provided, be nuisances which may be dealt with summarily under section 127—\n\n"
         + "No owner or occupier shall keep or permit or suffer to be kept any animals or pets in the said building."  
     ) 
 
@@ -216,7 +218,6 @@ def detect_img(image_url):
   image_path = download_and_resize_image(image_url, 640, 480)
   run_detector(detector, image_path)
   end_time = time.time()
-  print("Inference time:",end_time-start_time)
 
 
 
