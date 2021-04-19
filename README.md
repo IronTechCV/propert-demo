@@ -6,7 +6,7 @@ To run this code on the HKU GPU farm:
 # Activate virtual GPU session 
 gpu-interactive
 
-# For first time users:
+# For first time users only:
 git clone https://github.com/propert-cv/propert-demo
 
 cd propert-demo
