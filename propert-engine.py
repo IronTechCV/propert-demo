@@ -126,7 +126,7 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
   #                             25)
   # except IOError:
   #   print("Font not found, using default font.")
-    font = ImageFont.load_default()
+  font = ImageFont.load_default()
 
   for i in range(min(boxes.shape[0], max_boxes)):
     if scores[i] >= min_score:
