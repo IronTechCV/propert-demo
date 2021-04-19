@@ -164,19 +164,20 @@ def report(to, object, problem, regulation):
 
   assert int(choice) in [1, 2, 3], "Wrong input"
 
-  if choice == 1:
+  if int(choice) == 1:
     f = "Anonymous"
-  elif choice == 2:
+  elif int(choice) == 2:
     f = "User X"
   else:
     return
-  
-  print("""============
-    Email sent:""" +
-    '\nFrom:' + f +
-    '\nTo:' + to +
-    '\nProblem:' + problem +
-    '\nRegulation:' + regulation)
+
+  print("============")
+  print("Email Sent:")
+  print("From: " + f)
+  print("To: " + to)
+  print("Subject: " + Object)
+  print("Problem: " + problem)
+  print("Regulation" + regulation)
 
 def run_detector(detector, path):
   img = load_img(path)
@@ -224,8 +225,8 @@ def run_detector(detector, path):
 
     c = input("Please input your choice:")
     assert int(c) in [1, 2, 3, 4], "Wrong input"
-    print('-----------------------\n' + reg_stairs[int(c)])
-    report(stair_report_tar[int(c)], 'Stairs', stair_choices[int(c)], reg_stairs[int(c)])
+    print('-----------------------\n' + reg_stairs[int(c)-1])
+    report(stair_report_tar[int(c)-1], 'Stairs', stair_choices[int(c)-1], reg_stairs[int(c)-1])
 
   window_choices = ['I need a window fixed',
                     'There is an installation through a window',
@@ -250,16 +251,16 @@ def run_detector(detector, path):
       assert int(flag) in [0, 1], "Wrong input"
       if int(flag) == 0:
         print('-----------------------\n' + 'The Building Manager has the power / duty to replace any glass in any windows or doors of the common parts of the said buildlng that may be broken.')
-        report(window_report_tar[int(c)], 'Window', window_choices[int(c)], 'The Building Manager has the power / duty to replace any glass in any windows or doors of the common parts of the said buildlng that may be broken.')
+        report(window_report_tar[int(c)-1], 'Window', window_choices[int(c)-1], 'The Building Manager has the power / duty to replace any glass in any windows or doors of the common parts of the said buildlng that may be broken.')
       else:
         print('-----------------------\n' + 'The expenses for keeping the interior of any Unit and all the fittings, fixtrues, wiring, plumbing and other services therein (other than main services serving the said buildiug as a whole) and all the windows and doors thereof, in good and tenantable repair and condition shall be borne directly by the owner thereof.')
-        report(window_report_tar[int(c)], 'Window', window_choices[int(c)], 'The expenses for keeping the interior of any Unit and all the fittings, fixtrues, wiring, plumbing and other services therein (other than main services serving the said buildiug as a whole) and all the windows and doors thereof, in good and tenantable repair and condition shall be borne directly by the owner thereof.')
-    elif int(c) == 2:
+        report(window_report_tar[int(c)-1], 'Window', window_choices[int(c)-1], 'The expenses for keeping the interior of any Unit and all the fittings, fixtrues, wiring, plumbing and other services therein (other than main services serving the said buildiug as a whole) and all the windows and doors thereof, in good and tenantable repair and condition shall be borne directly by the owner thereof.')
+    elif int(c)-1 == 2:
       print('-----------------------\n' + 'No conditioning or other units may be installed through the windows of the Units except with the written permission of the Managers and subject to such conditions including, without limitation, the taking of measures to avoid condensation dripping onto the premises below, the Managers may require.')
-      report(window_report_tar[int(c)], 'Window', window_choices[int(c)], 'No conditioning or other units may be installed through the windows of the Units except with the written permission of the Managers and subject to such conditions including, without limitation, the taking of measures to avoid condensation dripping onto the premises below, the Managers may require.')
+      report(window_report_tar[int(c)-1], 'Window', window_choices[int(c)-1], 'No conditioning or other units may be installed through the windows of the Units except with the written permission of the Managers and subject to such conditions including, without limitation, the taking of measures to avoid condensation dripping onto the premises below, the Managers may require.')
     else:
       print('-----------------------\n' + 'Lighting and ventilation of rooms used or intended to be used for habitation or as an office or kitchen:(1) Every room used for habitation or for the purposes of an office or as a kitchen shall be provided with natural lighting and ventilation.')
-      report(window_report_tar[int(c)], 'Window', window_choices[int(c)], 'Lighting and ventilation of rooms used or intended to be used for habitation or as an office or kitchen:(1) Every room used for habitation or for the purposes of an office or as a kitchen shall be provided with natural lighting and ventilation.')
+      report(window_report_tar[int(c)-1], 'Window', window_choices[int(c)-1], 'Lighting and ventilation of rooms used or intended to be used for habitation or as an office or kitchen:(1) Every room used for habitation or for the purposes of an office or as a kitchen shall be provided with natural lighting and ventilation.')
   
   
   pet_choices = ['Nuisance or danger to health by pets',
@@ -279,9 +280,9 @@ def run_detector(detector, path):
     c = input("Please input your choice:")
     assert int(c) in [1, 2], "Wrong input"
     
-    print('-----------------------\n' + reg_pets[int(c)])
+    print('-----------------------\n' + reg_pets[int(c)-1])
 
-    report(pet_report_tar[int(c)], 'Pets', pet_choices[int(c)], reg_pets[int(c)])
+    report(pet_report_tar[int(c)-1], 'Pets', pet_choices[int(c)-1], reg_pets[int(c)-1])
 
 def detect_img(image_url):
   start_time = time.time()
