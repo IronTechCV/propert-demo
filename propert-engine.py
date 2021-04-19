@@ -43,7 +43,7 @@ import time
 
 threshold = 0.2
 
-regulations_df = pd.read_csv('https://raw.githubusercontent.com/propert-cv/propert-demo/main/database.csv')
+regulations_df = pd.read_csv('./database.csv')
 all_objs = []
 # Print Tensorflow version
 # print(tf.__version__)
