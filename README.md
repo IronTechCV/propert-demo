@@ -6,6 +6,7 @@
 
 Required python packages:
 ```
+python>=3.8.0
 tensorflow>=2.2
 tensorflow-hub>=0.12.0
 matplotlib>=3.4.1
