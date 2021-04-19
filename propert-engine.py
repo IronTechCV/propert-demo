@@ -149,7 +149,7 @@ def load_img(path):
   img = tf.image.decode_jpeg(img, channels=3)
   return img
 
-def report(to, object, problem, regulation):
+def report(to, obj, problem, regulation):
   print('=================')
   print('Report to:' + to)
   
@@ -175,9 +175,9 @@ def report(to, object, problem, regulation):
   print("Email Sent:")
   print("From: " + f)
   print("To: " + to)
-  print("Subject: " + Object)
+  print("Subject: " + obj)
   print("Problem: " + problem)
-  print("Regulation" + regulation)
+  print("Regulation: " + regulation)
 
 def run_detector(detector, path):
   img = load_img(path)
