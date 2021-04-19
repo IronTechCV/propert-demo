@@ -1,4 +1,4 @@
-# ProperT: 
+# ProperT: Protecting tenants through computer vision.
 
 ![](https://i.imgur.com/fWw2jG0.png)
 
