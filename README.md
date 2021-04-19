@@ -1,15 +1,20 @@
-# propert-demo
+# ProperT: 
 
-To run this code on the HKU GPU farm:
+![](https://i.imgur.com/fWw2jG0.png)
 
-```sh
-# Activate virtual GPU session 
-gpu-interactive
+# How to run this code
 
-# For first time users only:
+Required python packages:
+```
+tensorflow>=2.2
+tensorflow-hub>=0.12.0
+matplotlib>=3.4.1
+pandas>=1.2.4
+```
+
+Run: 
+```bash
 git clone https://github.com/propert-cv/propert-demo
-
 cd propert-demo
-git pull origin # Make sure the source files are updated
 python propert-engine.py
 ```
