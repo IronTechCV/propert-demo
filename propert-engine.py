@@ -243,12 +243,5 @@ import requests
 import base64
 
 url = input('Please Input Image URL:  ')
-b2 = requests.get(url)
-img = Image.open(io.BytesIO(b2.content))
-buffer = io.BytesIO()
-img.save(buffer, format=img.format)
-myimage = buffer.getvalue()
-nnn = str(base64.b64encode(myimage))
-src = "data:image/{};base64,".format(img.format.lower()) + str(base64.b64encode(myimage))[2:-1]
 
-detect_img(src)
+detect_img(url)
