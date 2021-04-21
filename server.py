@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/15QaXcW83mo5hdVZ4Ou9TQqEsUVdBfBmU
 """
 
-!pip install anvil-uplink
 import anvil.server
 from anvil import *
 
@@ -304,3 +303,5 @@ def output(recognised_obj, c):
   Subs.index = pd.RangeIndex(len(Subs.index))
   
   return Subs.loc[0, "target"], Subs.loc[0, "regulation"], Subs.loc[0, "section"], Subs.loc[0, "text"]
+
+anvil.server.wait_forever()
