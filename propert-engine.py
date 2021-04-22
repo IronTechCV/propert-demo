@@ -16,6 +16,8 @@ Original file is located at
 Load Tensorflow and stuffs.
 """
 
+print('Note: this is a console-only version and does not connect to the Anvil Web app')
+
 # For running inference on the TF-Hub module.
 import tensorflow as tf
 import tensorflow_hub as hub
