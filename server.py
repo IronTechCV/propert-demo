@@ -275,8 +275,6 @@ def detect_img(image_url):
   end_time = time.time()
   return output_img
 
-detect_img('https://i.imgur.com/xyPtn4m.jpg')
-
 #@title Retrieve provision from legal database
 @anvil.server.callable
 def recognise_objs():
@@ -307,5 +305,7 @@ def output(recognised_obj, c):
   Subs.index = pd.RangeIndex(len(Subs.index))
   
   return Subs.loc[0, "target"], Subs.loc[0, "regulation"], Subs.loc[0, "section"], Subs.loc[0, "text"]
+
+print('The server is up and running. Test connection at propert.anvil.app. DO NOT terminate this process.')
 
 anvil.server.wait_forever()
