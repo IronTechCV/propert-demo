@@ -297,6 +297,10 @@ def output(recognised_obj, c):
   Subs.index = pd.RangeIndex(len(Subs.index))
   return Subs.loc[0, "target"], Subs.loc[0, "regulation"], Subs.loc[0, "section"], Subs.loc[0, "text"]
 
+print('Running test case...')
+
+detect_img('https://i.imgur.com/YYmI8Uz.jpg')
+
 print('The server is up and running. Test connection at propert.anvil.app. DO NOT terminate this process.')
 
 anvil.server.wait_forever()
