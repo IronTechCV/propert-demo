@@ -143,7 +143,7 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.2):
   colors = list(ImageColor.colormap.values())
  
   try:
-    font = ImageFont.truetype("/usr/share/fonts/truetype/liberation/LiberationSansNarrow-Regular.ttf",
+    font = ImageFont.truetype("https://github.com/propert-cv/propert-demo/raw/main/OpenSans-Light.ttf",
                               25)
   except IOError:
     print("Font not found, using default font.")
