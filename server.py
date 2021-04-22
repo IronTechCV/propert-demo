@@ -264,6 +264,10 @@ Test with images
 # for i in image:
 
 @anvil.server.callable
+def check_connection():
+  return 0
+
+@anvil.server.callable
 def detect_img(image_url):
   start_time = time.time()
   image_path = download_and_resize_image(image_url, 640, 480)
