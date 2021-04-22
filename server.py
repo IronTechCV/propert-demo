@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/15QaXcW83mo5hdVZ4Ou9TQqEsUVdBfBmU
 """
 
-!pip install anvil-uplink
 import anvil.server
 from anvil import *
 
