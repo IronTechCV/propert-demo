@@ -9,6 +9,7 @@ Original file is located at
 
 import anvil.server
 from anvil import *
+from urllib.request import urlopen
 
 anvil.server.connect("M7MDT5AD766C2QZBG6HRWWI4-GTTRJ3MRHDWLKXIO")
 
@@ -143,7 +144,7 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.2):
   colors = list(ImageColor.colormap.values())
  
   try:
-    font = ImageFont.truetype("https://github.com/propert-cv/propert-demo/raw/main/OpenSans-Light.ttf",
+    font = ImageFont.truetype(urlopen("https://github.com/propert-cv/propert-demo/raw/main/OpenSans-Light.ttf"),
                               25)
   except IOError:
     print("Font not found, using default font.")
