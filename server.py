@@ -223,7 +223,7 @@ def run_detector(detector, path):
       img.numpy(), result["detection_boxes"],
       result["detection_class_entities"], result["detection_scores"])
  
-  display_two_images(img, image_with_boxes)
+  # display_two_images(img, image_with_boxes)
   
   print("\nObjects detected: ")
   temp_objs = []
